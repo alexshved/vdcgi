@@ -29,7 +29,9 @@ typedef  unsigned short WORD;
 #include <openssl/md5.h>
 #include <mysql/mysql.h>
 // #include <ruby-3.4.0/ruby.h>
-#include <ruby.h>
+#include <ruby-3.4.0/ruby.h>
+#include <ruby-3.4.0/ruby/encoding.h>
+#include <ruby-3.4.0/ruby/oniguruma.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include <stdio.h>
