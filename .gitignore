@@ -3,11 +3,11 @@
 /_yardoc/
 /coverage/
 /doc/
-/pkg/
+#/pkg/
 /spec/reports/
 /tmp/
 *.bundle
-*.so
+#*.so
 *.o
 *.a
 mkmf.log
