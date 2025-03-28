@@ -24,7 +24,7 @@ require "mkmf"
   if !have_library("pthread")
     `yes | apt -y install libpthread-stubs0-dev`
   end
-  if !have_library("jansson")
+  if !have_library("libjansson-dev")
     `yes | apt -y install libjansson-dev`
   end
   if ! have_library("crypto")
