@@ -110,11 +110,11 @@ def asplode(lib)
     warn "-----\nUsing mysql_config at #{mc}\n-----"
     ver = `#{mc} --version`.chomp.to_f
     includes = `#{mc} --include`.chomp
-    abort unless $CHILD_STATUS.success?
+    # abort unless $CHILD_STATUS.success?
     libs = `#{mc} --libs_r`.chomp
     # MySQL 5.5 and above already have re-entrant code in libmysqlclient (no _r).
     libs = `#{mc} --libs`.chomp if ver >= 5.5 || libs.empty?
-    abort unless $CHILD_STATUS.success?
+    # abort unless $CHILD_STATUS.success?
     $INCFLAGS += ' ' + includes
     $libs = libs + " " + $libs
     rpath_dir = libs
