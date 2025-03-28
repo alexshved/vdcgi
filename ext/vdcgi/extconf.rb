@@ -7,31 +7,25 @@ require "mkmf"
 # selectively, or entirely remove this flag.
 
   if !have_library("libruby")
-    `yes | apt -y install libruby`
+     abort "-----\nA package libruby is required for installation libruby. Install libruby and try again\n-----"
   end    
   if !find_executable("mysql")
-    abort("Please install mysql")
-  end
-  if  !find_executable("libmysqlclient21","/usr/lib/x86_64-linux-gnu/")
-    `yes | apt -y install libmysqlclient21`
+   abort "-----\nA package mysql is required for installation libruby. Install mysql and try again\n-----"
   end
   if  !find_executable("ruby-dev")
-    `yes | apt -y install ruby-dev`
+    abort "-----\nA package ruby-dev is required for installation libruby. Install ruby-dev and try again\n-----"
   end
-  if  !find_executable("pkg-config")
-    `yes | apt -y install pkg-config`
-  end
-  if !have_library("pthread")
-    `yes | apt -y install libpthread-stubs0-dev`
-  end
+#    if !have_library("pthread")
+#     `yes | apt -y install libpthread-stubs0-dev`
+#   end
   if !have_library("libjansson-dev")
-    `yes | apt -y install libjansson-dev`
+     abort "-----\nA package libjansson-dev is required for installation libruby. Install libjansson-dev and try again\n-----"
   end
   if ! have_library("crypto")
-    `yes | apt -y install libhcrypto4-heimdal`
+    abort "-----\nA package crypto is required for installation libruby. Install crypto and try again\n-----"
   end
   if ! have_library("libmysqlclient-dev")
-    `yes | apt -y install libmysqlclient-dev`
+   abort "-----\nA package ibmysqlclient-dev is required for installation libruby. Install ibmysqlclient-dev and try again\n-----"
   end
 
 
