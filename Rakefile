@@ -17,17 +17,18 @@ task build: :compile
 GEMSPEC = Gem::Specification.load("vdcgi.gemspec")
 
 Rake::ExtensionTask.new("vdcgi", GEMSPEC) do |ext|
+  system "cd ext/jansson && rake build"
   ext.lib_dir = "lib/vdcgi"
 end
 
-namespace :vendor do
-  task :build do
-    system "cd ext/jansson && rake build"
-  end
+# namespace :vendor do
+#   task :build do
+#     system "cd ext/jansson && rake build"
+#   end
   
-  task :clean do
-    system "cd ext/jansson && rake clean"
-  end
-end
+#   task :clean do
+#     system "cd ext/jansson && rake clean"
+#   end
+# end
 task vendor: "vendor:build"
 task default: %i[clobber compile test rubocop]
