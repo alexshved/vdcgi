@@ -1,0 +1,13 @@
+root=user
+""=passwd
+3306=port
+127.0.0.1=host
+""=db
+192.168.0.101=ip
+shablon=domain
+https://shablon.wr/=url
+10=limit
+1=devel
+2=access
+1=threed
+33=utrack
