@@ -311,12 +311,12 @@ def asplode(lib)
   end
 # system "rake build"
 
-# have_library("libjansson-dev")
+have_library("jansson")
 append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
 v = " -std=c17 "
 $defs.push(v)
 $warnflags = "-Wall"
-$libs += " -lmysqlclient -lcrypto -ljansson -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
+$libs += " -lmysqlclient -lcrypto -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
 
 create_makefile("vdcgi/vdcgi")
