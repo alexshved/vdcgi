@@ -59,6 +59,7 @@ file_task 'config.status', :configure => :download do
 end
 file_task "libjansson.#{::FFI::Platform::LIBSUFFIX}", :defaultj => :configure do
   cmd "bash -c 'cd #{FILES[:download]} && make'"
+  puts "______cp file___________#{FILES[:download]}/src/.libs/#{FILES[:defaultj]}________________________"
   cmd "cp #{FILES[:download]}/src/.libs/#{FILES[:defaultj]} ."
 end
 

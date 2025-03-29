@@ -311,7 +311,7 @@ def asplode(lib)
   end
 # system "rake build"
 
-have_library("libjansson-dev")
+# have_library("libjansson-dev")
 append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
 v = " -std=c17 "
