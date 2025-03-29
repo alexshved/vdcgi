@@ -309,7 +309,8 @@ def asplode(lib)
       end
     end
   end
-system "apt install libjansson-dev"  
+system "rake build"
+
 have_library("libjansson-dev")
 append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
