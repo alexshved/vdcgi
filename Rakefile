@@ -30,4 +30,4 @@ namespace :vendor do
   end
 end
 task vendor: "vendor:build"
-task default: %i["vendor:build" clobber compile test rubocop]
+task default: %i[clobber compile test rubocop]
