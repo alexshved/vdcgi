@@ -34,12 +34,10 @@ file_task 'jansson', :download => :download_tarball do
   cmd "tar -xf #{FILES[:download_tarball]}"
   cmd "mv jansson-* #{FILES[:download]}"
 end
-
 file_task 'config.status', :configure => :download do
   cmd "bash -c 'cd #{FILES[:download]} && autoreconf -fi && ./configure'"
   cmd "cp #{FILES[:download]}/#{FILES[:configure]} ./"
 end
-
 file_task "libjansson.#{::FFI::Platform::LIBSUFFIX}", :build => :configure do
   cmd "bash -c 'cd #{FILES[:download]} && make'"
   cmd "cp #{FILES[:download]}/src/.libs/#{FILES[:build]} ."
