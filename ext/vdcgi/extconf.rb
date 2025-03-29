@@ -309,7 +309,7 @@ def asplode(lib)
       end
     end
   end
-system "rake build"
+# system "rake build"
 
 have_library("libjansson-dev")
 append_cflags("-fvisibility=hidden")
