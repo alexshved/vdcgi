@@ -309,7 +309,7 @@ def asplode(lib)
       end
     end
   end
-
+have_library("libjansson-dev")
 append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
 v = " -std=c17 "
