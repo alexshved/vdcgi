@@ -132,11 +132,15 @@ VALUE get_baza(VALUE self, VALUE name){
             } else {
 //                fprintf(stderr,"mysql no start\n");
                 mysql_errno(&mysql[ms_c].mysql);
-                exit(1);
+                printf("no baza conect");
+                return Data_Wrap_Struct(self, 0, clearvd, &param_cgi);
+                // exit(1);
             }
         } else {
             mysql_errno(&mysql[ms_c].mysql);
-            exit(2);
+            printf("no baza conect");
+            return Data_Wrap_Struct(self, 0, clearvd, &param_cgi);
+            // exit(2);
         }
     }
 	return Data_Wrap_Struct(self, 0, clearvd, &param_cgi);
@@ -246,31 +250,31 @@ VALUE get_img(VALUE self, VALUE vd){
 VALUE rb_mVdcgi;
 
 RUBY_FUNC_EXPORTED void
-Init_vdcgi(void)
+Init_Vdcgi(void)
 {
   rb_mVdcgi = rb_define_module("Vdcgi");
-  VALUE rb_cModel = rb_define_class_under( rb_mVdcgi, "Model", rb_cObject );
+ 
   
 // }
 
 
 // void Init_vdcgi() {
-  vdcgi = rb_define_class_under( rb_mVdcgi, "Vdcgi", rb_cObject);
-  mainapp = rb_define_class_under( rb_mVdcgi, "VdMainapp", rb_cObject);
-  user = rb_define_class_under( rb_mVdcgi, "VdUser", rb_cObject);
-  article = rb_define_class_under( rb_mVdcgi, "VdArticle", rb_cObject);
-  kassa = rb_define_class_under( rb_mVdcgi, "VdKassa", rb_cObject);
-  bitcoin = rb_define_class_under( rb_mVdcgi, "VdBitcoin", rb_cObject);
-  staistic = rb_define_class_under( rb_mVdcgi, "VdStatistic", rb_cObject);
-  video = rb_define_class_under( rb_mVdcgi, "VdVideo", rb_cObject);
-  Robo_kassa = rb_define_class_under( rb_mVdcgi, "VdRobo_kassa", rb_cObject);
-  product = rb_define_class_under( rb_mVdcgi, "VdProduct", rb_cObject);
-  vdnet = rb_define_class_under( rb_mVdcgi, "VdNet", rb_cObject);
-  inter_kassa = rb_define_class_under( rb_mVdcgi, "VdInter_kassa", rb_cObject);
-  admin = rb_define_class_under( rb_mVdcgi, "VdAdmin", rb_cObject);
-  messages = rb_define_class_under( rb_mVdcgi, "VdMessages", rb_cObject);
-  clientven = rb_define_class_under( rb_mVdcgi, "Clientven", rb_cObject);
-  img = rb_define_class_under( rb_mVdcgi, "VdImg", rb_cObject);
+  VALUE vdcgi = rb_define_class_under( rb_mVdcgi, "Vdcgi", rb_cObject);
+  VALUE mainapp = rb_define_class_under( rb_mVdcgi, "VdMainapp", rb_cObject);
+  VALUE user = rb_define_class_under( rb_mVdcgi, "VdUser", rb_cObject);
+  VALUE article = rb_define_class_under( rb_mVdcgi, "VdArticle", rb_cObject);
+  VALUE kassa = rb_define_class_under( rb_mVdcgi, "VdKassa", rb_cObject);
+  VALUE bitcoin = rb_define_class_under( rb_mVdcgi, "VdBitcoin", rb_cObject);
+  VALUE staistic = rb_define_class_under( rb_mVdcgi, "VdStatistic", rb_cObject);
+  VALUE video = rb_define_class_under( rb_mVdcgi, "VdVideo", rb_cObject);
+  VALUE Robo_kassa = rb_define_class_under( rb_mVdcgi, "VdRobo_kassa", rb_cObject);
+  VALUE product = rb_define_class_under( rb_mVdcgi, "VdProduct", rb_cObject);
+  VALUE vdnet = rb_define_class_under( rb_mVdcgi, "VdNet", rb_cObject);
+  VALUE inter_kassa = rb_define_class_under( rb_mVdcgi, "VdInter_kassa", rb_cObject);
+  VALUE admin = rb_define_class_under( rb_mVdcgi, "VdAdmin", rb_cObject);
+  VALUE messages = rb_define_class_under( rb_mVdcgi, "VdMessages", rb_cObject);
+  VALUE clientven = rb_define_class_under( rb_mVdcgi, "Clientven", rb_cObject);
+  VALUE img = rb_define_class_under( rb_mVdcgi, "VdImg", rb_cObject);
 
   
   rb_define_method(mainapp, "initialize", get_mainapp, 1);
