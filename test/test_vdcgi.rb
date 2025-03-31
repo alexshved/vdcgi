@@ -4,7 +4,7 @@ require "test_helper"
 
 class TestVdcgi < Minitest::Test
   def test_that_it_has_a_version_number
-    return "0.1"
+    refute_nil ::Vdcgi::VERSION
   end
 
   def test_it_does_something_useful

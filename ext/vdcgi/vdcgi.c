@@ -1,12 +1,5 @@
 #include "vdcgi.h"
 
-// VALUE rb_mVdcgi;
-
-// RUBY_FUNC_EXPORTED void
-// Init_vdcgi(void)
-// {
-//   rb_mVdcgi = rb_define_module("Vdcgi");
-// }
 
 VALUE user_param;
 int level = 0;
@@ -250,24 +243,34 @@ VALUE get_img(VALUE self, VALUE vd){
 	return self;
 }
 
+VALUE rb_mVdcgi;
 
-void Init_vdcgi() {
-  vdcgi = rb_define_class("Vdcgi", rb_cObject);
-  mainapp = rb_define_class("VdMainapp", rb_cObject);
-  user = rb_define_class("VdUser", rb_cObject);
-  article = rb_define_class("VdArticle", rb_cObject);
-  kassa = rb_define_class("VdKassa", rb_cObject);
-  bitcoin = rb_define_class("VdBitcoin", rb_cObject);
-  staistic = rb_define_class("VdStatistic", rb_cObject);
-  video = rb_define_class("VdVideo", rb_cObject);
-  Robo_kassa = rb_define_class("VdRobo_kassa", rb_cObject);
-  product = rb_define_class("VdProduct", rb_cObject);
-  vdnet = rb_define_class("VdNet", rb_cObject);
-  inter_kassa = rb_define_class("VdInter_kassa", rb_cObject);
-  admin = rb_define_class("VdAdmin", rb_cObject);
-  messages = rb_define_class("VdMessages", rb_cObject);
-  clientven = rb_define_class("Clientven", rb_cObject);
-  img = rb_define_class("VdImg", rb_cObject);
+RUBY_FUNC_EXPORTED void
+Init_vdcgi(void)
+{
+  rb_mVdcgi = rb_define_module("Vdcgi");
+  VALUE rb_cModel = rb_define_class_under( rb_mVdcgi, "Model", rb_cObject );
+  
+// }
+
+
+// void Init_vdcgi() {
+  vdcgi = rb_define_class_under( rb_mVdcgi, "Vdcgi", rb_cObject);
+  mainapp = rb_define_class_under( rb_mVdcgi, "VdMainapp", rb_cObject);
+  user = rb_define_class_under( rb_mVdcgi, "VdUser", rb_cObject);
+  article = rb_define_class_under( rb_mVdcgi, "VdArticle", rb_cObject);
+  kassa = rb_define_class_under( rb_mVdcgi, "VdKassa", rb_cObject);
+  bitcoin = rb_define_class_under( rb_mVdcgi, "VdBitcoin", rb_cObject);
+  staistic = rb_define_class_under( rb_mVdcgi, "VdStatistic", rb_cObject);
+  video = rb_define_class_under( rb_mVdcgi, "VdVideo", rb_cObject);
+  Robo_kassa = rb_define_class_under( rb_mVdcgi, "VdRobo_kassa", rb_cObject);
+  product = rb_define_class_under( rb_mVdcgi, "VdProduct", rb_cObject);
+  vdnet = rb_define_class_under( rb_mVdcgi, "VdNet", rb_cObject);
+  inter_kassa = rb_define_class_under( rb_mVdcgi, "VdInter_kassa", rb_cObject);
+  admin = rb_define_class_under( rb_mVdcgi, "VdAdmin", rb_cObject);
+  messages = rb_define_class_under( rb_mVdcgi, "VdMessages", rb_cObject);
+  clientven = rb_define_class_under( rb_mVdcgi, "Clientven", rb_cObject);
+  img = rb_define_class_under( rb_mVdcgi, "VdImg", rb_cObject);
 
   
   rb_define_method(mainapp, "initialize", get_mainapp, 1);
