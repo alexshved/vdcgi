@@ -314,10 +314,10 @@ def asplode(lib)
 have_library("jansson")
 append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
-v = " -std=c17 "
-$defs.push(v)
+# v = " -std=c17 "
+# $defs.push(v)
 $warnflags = "-Wall"
-$libs += " -lmysqlclient -lcrypto -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
-puts "_____________#{$libs}________________________"
+# $libs += " -lmysqlclient -lcrypto -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
+# puts "_____________#{$libs}________________________"
 
 create_makefile("vdcgi/vdcgi")
