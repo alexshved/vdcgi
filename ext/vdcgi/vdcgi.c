@@ -250,7 +250,7 @@ VALUE get_img(VALUE self, VALUE vd){
 VALUE rb_mVdcgi;
 
 RUBY_FUNC_EXPORTED void
-Init_Vdcgi(void)
+Init_vdcgi(void)
 {
   rb_mVdcgi = rb_define_module("Vdcgi");
  
