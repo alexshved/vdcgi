@@ -316,7 +316,7 @@ append_cflags("-fvisibility=hidden")
 extension_name = 'vdcgi'
 # v = " -std=c17 "
 # $defs.push(v)
-$warnflags = "-Wall"
+# $warnflags = "-Wall"
 # $libs += " -lmysqlclient -lcrypto -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
 # puts "_____________#{$libs}________________________"
 
