@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rake/clean'
 require 'ffi'
 require "bundler/gem_tasks"
@@ -14,7 +15,6 @@ require "rake/extensiontask"
 
 task build: :compile
 
-
 GEMSPEC = Gem::Specification.load("vdcgi.gemspec")
 
 Rake::ExtensionTask.new("vdcgi", GEMSPEC) do |ext|
@@ -26,11 +26,11 @@ task :defaultj => :clobber
 
 def self.file_task(filename, opts, &block)
   name, dep = opts.is_a?(Hash) ? opts.to_a.first : [opts, nil]
-  
+
   FILES[name] = filename
   CLEAN.include filename
   task name => filename
-  
+
   if dep
     file filename => FILES[dep], &block
   else
