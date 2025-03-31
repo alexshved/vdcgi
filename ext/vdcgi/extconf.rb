@@ -311,9 +311,9 @@ def asplode(lib)
   end
 # system "rake build"
 
-have_library("jansson")
+# have_library("jansson")
 append_cflags("-fvisibility=hidden")
-extension_name = 'vdcgi'
+# extension_name = 'vdcgi'
 # v = " -std=c17 "
 # $defs.push(v)
 # $warnflags = "-Wall"
