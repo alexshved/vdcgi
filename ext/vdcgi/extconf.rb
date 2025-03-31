@@ -318,5 +318,6 @@ v = " -std=c17 "
 $defs.push(v)
 $warnflags = "-Wall"
 $libs += " -lmysqlclient -lcrypto -lssl -lpthread  -lpthread -ldl -lcrypt -lm  -lc "
+puts "_____________#{$libs}________________________"
 
 create_makefile("vdcgi/vdcgi")
